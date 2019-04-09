@@ -1,9 +1,20 @@
 kind: pipeline
-name: default
 
 steps:
 - name: hello
   image: alpine
   commands:
-  - env
-  - date
+  - echo hello
+  - echo world
+---
+kind: pipeline
+
+steps:
+- name: hello
+  image: alpine
+  commands:
+  - This is tagged commit
+
+trigger:
+  event:
+  - tag
