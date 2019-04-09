@@ -15,7 +15,7 @@ steps:
 - name: hello
   image: alpine
   commands:
-  - This is tagged commit
+  - echo This is tagged commit
 
 trigger:
   event:
