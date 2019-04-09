@@ -1,0 +1,12 @@
+.ipynb_checkpoints/
+*.orig
+ignore_me/
+deleteme*
+__pycache__/
+.pytest_cache/
+
+# Intellij
+/*.iml
+.idea/
+*.iml
+.attach_pid*
