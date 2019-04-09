@@ -7,6 +7,8 @@ steps:
   commands:
   - echo hello
   - echo world
+  - ls -lh
+  - cat README.md
 ---
 kind: pipeline
 name: tag
