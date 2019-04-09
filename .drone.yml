@@ -5,5 +5,4 @@ steps:
 - name: hello
   image: alpine
   commands:
-  - echo hello
-  - echo world
+  - env
