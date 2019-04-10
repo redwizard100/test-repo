@@ -4,7 +4,7 @@ name: default
 
 steps:
 - name: first-step
-  image: debian
+  image: python:alpine
   environment:
     USERNAME:
       from_secret: SECRET
@@ -12,8 +12,9 @@ steps:
   - date
   - echo Hello Again
   - echo $USERNAME
+  - python -c "import os; print(os.getenv('USERNAME'))"
 ---
 kind: signature
-hmac: ba12d02c050730584d85f94b6b519633b3ed756314334e74de55afea28394a8a
+hmac: 6f8b124f6e773c7bfa0f14f7549addc916363ea2be2b69fb12d16e01aeae325c
 
 ...
