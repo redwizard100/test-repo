@@ -2,7 +2,7 @@
 kind: pipeline
 name: default
 
-build:
+steps:
   image: debian
   environment:
     USERNAME:
@@ -13,6 +13,6 @@ build:
   - echo $USERNAME
 ---
 kind: signature
-hmac: 3e59ce87bdc4c5577e7d8f4fe36bdc62e4ed73596d5a24370179bd462a0527d3
+hmac: cbef3f9b7236fe79802a06433f2e726ab5e79622d1726af3068765373fdd919e
 
 ...
