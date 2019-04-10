@@ -1,6 +1,7 @@
 FROM alpine
 
-# COPY . /root
+COPY . /root
+WORKDIR /root
 
 RUN pwd && \
     ls -lh 
