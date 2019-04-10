@@ -13,6 +13,6 @@ build:
   - echo $USERNAME
 ---
 kind: signature
-hmac: e0b548c65a3cc341fc55e534ec3f810de59039685c1d55a8050c7c4ab09d9900
+hmac: 3e59ce87bdc4c5577e7d8f4fe36bdc62e4ed73596d5a24370179bd462a0527d3
 
 ...
