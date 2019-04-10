@@ -2,23 +2,5 @@ kind: pipeline
 name: default
 
 steps:
-- name: hello
-  image: alpine
-  commands:
-  - echo hello
-  - echo world
-  - ls -lh
-  - cat README.md
----
-kind: pipeline
-name: tag
-
-steps:
-- name: hello
-  image: alpine
-  commands:
-  - echo This is tagged commit
-
-trigger:
-  event:
-  - tag
+- name: docker  
+  image: plugins/docker
