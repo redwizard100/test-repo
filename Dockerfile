@@ -1,5 +1,7 @@
 FROM alpine
 
-RUN ls -lh
+COPY . /root
+
+RUN ls -lh /root
 
 RUN exit 1
