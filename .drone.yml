@@ -9,6 +9,6 @@ build:
   - echo Hello
 ---
 kind: signature
-hmac: 5d433c3d3556d10713d6e766544c3bf823debee4aaff05ffb266504db6796863
+hmac: f73806149be3d44ba30fd4b223c70d3ad4cf7984df7c58b0ae6b414a38146ca5
 
 ...
