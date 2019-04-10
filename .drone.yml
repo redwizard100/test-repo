@@ -3,6 +3,7 @@ kind: pipeline
 name: default
 
 steps:
+- name: first-step
   image: debian
   environment:
     USERNAME:
@@ -13,6 +14,6 @@ steps:
   - echo $USERNAME
 ---
 kind: signature
-hmac: cbef3f9b7236fe79802a06433f2e726ab5e79622d1726af3068765373fdd919e
+hmac: ba12d02c050730584d85f94b6b519633b3ed756314334e74de55afea28394a8a
 
 ...
