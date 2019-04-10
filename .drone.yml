@@ -11,12 +11,22 @@ steps:
   commands:
   - touch build-output
 
-- name: docker  
-  image: plugins/docker
-  settings:
-    username: kevinbacon
-    password: pa55word
-    repo: foo/bar
+- name: second-step
+  image: alpine
+  environment:
+    USERNAME:
+      from_secret: SECRET
+  commands:
+  - pwd
+  - ls -lh
+
+
+# - name: docker  
+#   image: plugins/docker
+#   settings:
+#     username: kevinbacon
+#     password: pa55word
+#     repo: foo/bar
 ---
 kind: signature
 hmac: e6f0a82c6a9aff441f8984b6e9275dd09f72b10d115eeda143127fa715e91407
