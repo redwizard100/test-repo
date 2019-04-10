@@ -4,9 +4,13 @@ name: default
 
 build:
   image: debian
+  environment:
+    USERNAME:
+      from_secret: SECRET
   commands:
   - date
   - echo Hello Again
+  - echo $USERNAME
 ---
 kind: signature
 hmac: e0b548c65a3cc341fc55e534ec3f810de59039685c1d55a8050c7c4ab09d9900
