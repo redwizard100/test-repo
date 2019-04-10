@@ -6,9 +6,9 @@ build:
   image: debian
   commands:
   - date
-  - echo Hello
+  - echo Hello Again
 ---
 kind: signature
-hmac: f73806149be3d44ba30fd4b223c70d3ad4cf7984df7c58b0ae6b414a38146ca5
+hmac: e0b548c65a3cc341fc55e534ec3f810de59039685c1d55a8050c7c4ab09d9900
 
 ...
