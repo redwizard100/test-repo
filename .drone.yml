@@ -1,6 +1,12 @@
 kind: pipeline
 name: default
 
+build:
+  image: debian
+  commands:
+  - touch Hello
+
 steps:
 - name: docker  
+  repo: deleteme
   image: plugins/docker
