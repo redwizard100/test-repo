@@ -9,7 +9,7 @@ steps:
     USERNAME:
       from_secret: SECRET
   commands:
-  - touch build-output
+  - touch build-output-modified-again
   - echo $USERNAME
 
 - name: second-step
@@ -29,6 +29,6 @@ steps:
 #     repo: foo/bar
 ---
 kind: signature
-hmac: 14d4a2ef7a9f375912b3503e35a627c0adad01916fd6301fb6f271ab0f879a1e
+hmac: 7980ba8d6f8bc03322abcf8994d112e7e6e673cf1b0e3d295eeb167aaa18e57b
 
 ...
