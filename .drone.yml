@@ -14,12 +14,11 @@ steps:
 
 - name: second-step
   image: alpine
-  environment:
-    USERNAME:
-      from_secret: SECRET
   commands:
   - pwd
   - ls -lh
+  - echo $SECRET 
+  - echo $USERNAME
 
 
 # - name: docker  
@@ -30,6 +29,6 @@ steps:
 #     repo: foo/bar
 ---
 kind: signature
-hmac: 327d79311642f6eb9de8db144d885095de5e1c88dffbe589b5a1ba9750dd9568
+hmac: 14d4a2ef7a9f375912b3503e35a627c0adad01916fd6301fb6f271ab0f879a1e
 
 ...
