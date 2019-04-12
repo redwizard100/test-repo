@@ -10,6 +10,7 @@ steps:
       from_secret: SECRET
   commands:
   - touch build-output
+  - env
 
 - name: second-step
   image: alpine
@@ -29,6 +30,6 @@ steps:
 #     repo: foo/bar
 ---
 kind: signature
-hmac: e6f0a82c6a9aff441f8984b6e9275dd09f72b10d115eeda143127fa715e91407
+hmac: eae8f089f67bc998fef4ced268879eeb257461e9c3610a7e62f803a3e3d4f5ea
 
 ...
