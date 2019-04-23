@@ -1,24 +1,23 @@
----
 kind: pipeline
 name: default
 
 steps:
-- name: first-step
+- name: test multiline
   image: alpine
-  environment:
-    USERNAME:
-      from_secret: SECRET
   commands:
-  - touch build-output-modified-again
-  - echo $USERNAME
+  - |
+    echo Hello \
+         to \
+         the \
+         world
 
-- name: second-step
-  image: alpine
-  commands:
-  - pwd
-  - ls -lh
-  - echo $SECRET 
-  - echo $USERNAME
+# - name: second-step
+#   image: alpine
+#   commands:
+#   - pwd
+#   - ls -lh
+#   - echo $SECRET 
+#   - echo $USERNAME
 
 
 # - name: docker  
@@ -27,8 +26,8 @@ steps:
 #     username: kevinbacon
 #     password: pa55word
 #     repo: foo/bar
----
-kind: signature
-hmac: 7980ba8d6f8bc03322abcf8994d112e7e6e673cf1b0e3d295eeb167aaa18e57b
+# ---
+# kind: signature
+# hmac: 7980ba8d6f8bc03322abcf8994d112e7e6e673cf1b0e3d295eeb167aaa18e57b
 
-...
+# ...
