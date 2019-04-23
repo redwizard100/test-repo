@@ -5,7 +5,7 @@ steps:
 - name: test multiline
   image: alpine
   commands:
-  - |
+  - >
     echo Hello \
          to \
          the \
