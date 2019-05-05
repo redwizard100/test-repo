@@ -11,3 +11,7 @@ matrix:
       -in Dockerfile.enc -out Dockerfile -d
     script: echo "STAGE 2"
     if: type != pull_request
+
+  - stage: stage 3
+    language: minimal
+    script: echo "STAGE 3"
