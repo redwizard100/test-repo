@@ -1,0 +1,8 @@
+before_install:
+- openssl aes-256-cbc -K $encrypted_d24b04d8fce8_key -iv $encrypted_d24b04d8fce8_iv
+  -in Dockerfile.enc -out Dockerfile -d
+
+language: minimal
+script: 
+- echo Hello
+- head Dockerfile
