@@ -1,8 +1,13 @@
-before_install:
-- openssl aes-256-cbc -K $encrypted_d24b04d8fce8_key -iv $encrypted_d24b04d8fce8_iv
-  -in Dockerfile.enc -out Dockerfile -d
+matrix:
+  include:
+  - stage: stage 1
+    language: minimal
+    script: echo "STAGE 1"
 
-language: minimal
-script: 
-- echo Hello
-- head Dockerfile
+  - stage: stage 2
+    language: minimal
+    before_install:
+    - openssl aes-256-cbc -K $encrypted_d24b04d8fce8_key -iv $encrypted_d24b04d8fce8_iv
+      -in Dockerfile.enc -out Dockerfile -d
+    script: echo "STAGE 2"
+    if: type != pull_request
