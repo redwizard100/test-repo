@@ -2,10 +2,8 @@ matrix:
   include:
   - stage: stage 1
     language: java
-    python: 3.6
+    dist: xenial
     script:
-    - env 
-    - python --version
+    - cat /etc/*release
     - python3 --version
-    - which pip
-    - which pip3
+    - python --version
