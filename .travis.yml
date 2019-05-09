@@ -4,6 +4,8 @@ matrix:
     language: java
     dist: xenial
     script:
-    - cat /etc/*release
-    - python3 --version
-    - python --version
+    - wget -qO- https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-244.0.0-linux-x86_64.tar.gz | tar xz -C ${TRAVIS_BUILD_DIR}
+    - export PATH=${TRAVIS_BUILD_DIR}/google-cloud-sdk/bin:$PATH
+    - gcloud config set project project-240005
+    - bq ls
+    - bq mk -t public_dataset.table_1
