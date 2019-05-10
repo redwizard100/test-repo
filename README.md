@@ -2,6 +2,7 @@
 Repo for testing 
 
 random stuff
+random stuff 2
 
 [![Build Status](http://drone.dragonin.me/api/badges/davidheryanto/test-repo/status.svg)](http://drone.dragonin.me/davidheryanto/test-repo)
 
