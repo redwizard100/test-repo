@@ -1,6 +1,8 @@
 # test-repo
 Repo for testing 
 
+random stuff
+
 [![Build Status](http://drone.dragonin.me/api/badges/davidheryanto/test-repo/status.svg)](http://drone.dragonin.me/davidheryanto/test-repo)
 
 Added by another user again
