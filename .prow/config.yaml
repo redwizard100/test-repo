@@ -1,0 +1,88 @@
+plank:
+  allow_cancellations: true
+  job_url_prefix: http://35.244.149.188/view/gcs
+  report_template: '[Full PR test history](https://35.244.149.188/pr-history?org={{.Spec.Refs.Org}}&repo={{.Spec.Refs.Repo}}&pr={{with index .Spec.Refs.Pulls 0}}{{.Number}}{{end}})'
+  default_decoration_config:
+    timeout: 14400000000000 # 4h in nano seconds
+    grace_period: 15000000000 # 15s in nano seconds
+    utility_images:
+      clonerefs: gcr.io/k8s-prow/clonerefs:v20190221-d14461a
+      initupload: gcr.io/k8s-prow/initupload:v20190221-d14461a
+      entrypoint: gcr.io/k8s-prow/entrypoint:v20190221-d14461a
+      sidecar: gcr.io/k8s-prow/sidecar:v20190221-d14461a
+    gcs_configuration:
+      bucket: dheryanto-prow-kf-feast
+      path_strategy: explicit
+    gcs_credentials_secret: dheryanto-prow-plank
+    ssh_key_secrets: 
+    - dheryanto-test-repo-deploy-key
+
+deck:
+  spyglass:
+    size_limit: 500e+6 # 500MB
+    viewers:
+      "started.json|finished.json": ["metadata"]
+      "build-log.txt": ["buildlog"]
+      "artifacts/junit.*\\.xml": ["junit"] # Remember to escape your '\' in yaml strings!
+
+presubmits:
+  davidheryanto/test-repo:
+  - name: presubmit-job-1
+    decorate: true           
+    always_run: true        
+    skip_report: false
+    spec:
+      containers:
+      - name: hello-world
+        image: debian:stretch
+        command: 
+        - bash
+        - -c 
+        - |
+          echo presubmit-job-1
+
+  - name: presubmit-job-2
+    decorate: true           
+    always_run: true        
+    skip_report: false
+    spec:
+      containers:
+      - name: hello-world
+        image: debian:stretch
+        command: 
+        - bash
+        - -c 
+        - |
+          echo presubmit-job-2
+
+  - name: presubmit-job-3
+    decorate: true           
+    always_run: true        
+    skip_report: false
+    spec:
+      containers:
+      - name: hello-world
+        image: debian:stretch
+        command: 
+        - bash
+        - -c 
+        - |
+          env
+          pwd
+          ls -lht
+          cat README.md
+
+postsubmits:
+  davidheryanto/test-repo:
+  - name: hello-world
+    decorate: true           
+    skip_report: false
+    spec:
+      containers:
+      - name: hello-world
+        image: debian:stretch
+        command: 
+        - bash
+        - -c 
+        - |
+          echo postsubmits

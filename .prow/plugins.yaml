@@ -1,0 +1,15 @@
+plugins:
+  davidheryanto/test-repo:
+  - size
+  - trigger
+  - lgtm
+  - config-updater
+
+config_updater:
+  maps:
+    .prow/config.yaml:
+      name: config
+    .prow/plugins.yaml:
+      name: plugins
+    .prow/job-config.yaml:
+      name: job-config
