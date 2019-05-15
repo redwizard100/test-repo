@@ -1,9 +1,16 @@
 plugins:
   davidheryanto/test-repo:
-  - size
-  - trigger
+  - approve
+  - assign
+  - blunderbuss
+  - help
+  - hold
   - lgtm
-  - config-updater
+  - lifecycle
+  - trigger
+  - wip
+  # - lgtm
+  # - config-updater
 
 config_updater:
   maps:

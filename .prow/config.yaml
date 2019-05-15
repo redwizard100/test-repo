@@ -1,10 +1,10 @@
 plank:
   allow_cancellations: true
-  job_url_prefix: http://35.244.149.188/view/gcs
+  job_url_prefix: http://prow.dragonin.me/view/gcs
   report_template: '[Full PR test history](https://35.244.149.188/pr-history?org={{.Spec.Refs.Org}}&repo={{.Spec.Refs.Repo}}&pr={{with index .Spec.Refs.Pulls 0}}{{.Number}}{{end}})'
   default_decoration_config:
-    timeout: 14400000000000 # 4h in nano seconds
-    grace_period: 15000000000 # 15s in nano seconds
+    timeout: 7200000000000    # 2h
+    grace_period: 15000000000 # 15s
     utility_images:
       clonerefs: gcr.io/k8s-prow/clonerefs:v20190221-d14461a
       initupload: gcr.io/k8s-prow/initupload:v20190221-d14461a
@@ -17,13 +17,26 @@ plank:
     ssh_key_secrets: 
     - dheryanto-test-repo-deploy-key
 
+sinker:
+  resync_period: 1h
+  max_prowjob_age: 168h
+  max_pod_age: 12h
+
 deck:
+  tide_update_period: 1s
   spyglass:
     size_limit: 500e+6 # 500MB
     viewers:
       "started.json|finished.json": ["metadata"]
       "build-log.txt": ["buildlog"]
       "artifacts/junit.*\\.xml": ["junit"] # Remember to escape your '\' in yaml strings!
+
+branch-protection:
+  orgs:
+    davidheryanto:
+      repos:
+        test-repo:
+          protect: true
 
 presubmits:
   davidheryanto/test-repo:
